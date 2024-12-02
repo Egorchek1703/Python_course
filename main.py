@@ -1,20 +1,15 @@
-# Strings
+# Numbers
 
-full_name = "egoR semenov"
+num1 = 7
+num2 = 3
 
-print(full_name.title()) # Egor Semenov
-print(full_name.upper()) # EGOR SEMENOV
-print(full_name.lower()) # egor semenov
+print(num1 + num2) # 10
+print(num1 - num2) # 4
+print(num1 * num2) # 21
+print(num1 / num2) # 2.3333333333333335
 
-print("Экранированный\nперенос строки")
-print("Экранированный\tсимвол табуляции")
-print("\"Экранированные кавычки\"")
-print('\'Экранированные кавычки\'')
-print('Экранированный слеш \\')
+num3 = 8999999999999999999999999999999999
+num4 = 1000000000000000000000000000000001
 
-test_string = " ., ,, . . , ,, . . Python is cool .,, ., __ ,. ,.,  ,."
-print("Без strip(): " + test_string)
-print("С strip(): " + test_string.strip("., _"))
-
-print("lstrip(): " + test_string.lstrip("., _")) # Python is cool .,, ., __ ,. ,.,  ,.
-print("rstrip(): " + test_string.rstrip("., _")) # ., ,, . . , ,, . . Python is cool
+result=num3 + num4
+print(result) # 10000000000000000000000000000000000
