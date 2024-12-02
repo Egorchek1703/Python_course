@@ -1,31 +1,20 @@
-# Variables
+# Strings
 
-a = "Hello"
-b = 25
+full_name = "egoR semenov"
 
-"""
-    Это многострочный комментарий
-"""
-# А это однострочный
+print(full_name.title()) # Egor Semenov
+print(full_name.upper()) # EGOR SEMENOV
+print(full_name.lower()) # egor semenov
 
-print(a)
-print(b)
+print("Экранированный\nперенос строки")
+print("Экранированный\tсимвол табуляции")
+print("\"Экранированные кавычки\"")
+print('\'Экранированные кавычки\'')
+print('Экранированный слеш \\')
 
-c = 42
-c = 33
-print(c) # Выведет 33
+test_string = " ., ,, . . , ,, . . Python is cool .,, ., __ ,. ,.,  ,."
+print("Без strip(): " + test_string)
+print("С strip(): " + test_string.strip("., _"))
 
-num1 = 1
-num2 = 41
-result = num1 + num2
-print(result) # Выведет 42
-
-first_name = "Egor"
-last_name = "Semenov"
-full_name = first_name + " " + last_name
-print(full_name)
-
-
-string = "I am a string "
-number = 42
-print(string + str(number))
+print("lstrip(): " + test_string.lstrip("., _")) # Python is cool .,, ., __ ,. ,.,  ,.
+print("rstrip(): " + test_string.rstrip("., _")) # ., ,, . . , ,, . . Python is cool
