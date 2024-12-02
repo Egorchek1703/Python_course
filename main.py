@@ -1,15 +1,12 @@
-# Numbers
+# Cycles
 
-num1 = 7
-num2 = 3
+for i in range(0, 100):
+    print(i)
 
-print(num1 + num2) # 10
-print(num1 - num2) # 4
-print(num1 * num2) # 21
-print(num1 / num2) # 2.3333333333333335
+for i in range (0, 100 + 1, 20):
+    print(i) # 0 20 40 60 80 100
 
-num3 = 8999999999999999999999999999999999
-num4 = 1000000000000000000000000000000001
-
-result=num3 + num4
-print(result) # 10000000000000000000000000000000000
+x = 0
+while x <= 100:
+    print(x)
+    x = x + 0.5
