@@ -1,63 +1,41 @@
-# Arrays (lists)
-#=============================== Part 1 ====================================
+# If, elif, else
 
-cities = ['Voronej', 'Moscow', 'ryazan', 'Smolensk', 'Taganrog']
+print(1 + 0 == 1) # true
+print( type(1) == type('1') ) # false
 
-name_of_list = list(range(0, 30))
-
-print(name_of_list)
-
-print( len(name_of_list) )
-
-print( cities[2].title() ) # Ryazan
-print( cities[2].upper() ) # RYAZAN
-print( cities[3].lower() ) # smolensk
-
-cities[2] = 'Ryazan_2'
-print(cities) # выведет массив содержащий третим элементом строку 'Ryazan_2'
+answer = input("41 + 1 = ")
+if answer == str(42):
+    print("You are right!")
+elif answer == str(24):
+    print("Almost")
+else:
+    print("You are wrong, try again")
 
 
-cities.append('Sevastopol\'')
-print(cities)
+age = int(input("Введите ваш возраст: "))
+if (age > 0 and age < 18):
+    print("You are a child")
+elif ( (age >= 18 and age < 40) or (age >= 40 and age < 60) ):
+    # Stupid condition to show how works the operator "or"
+    print("You are an adult human")
+elif (age >= 60 and age <= 100):
+    print("You are a old human")
+else:
+    print("You are lying me -_-")
 
-cities.insert(2, 'Ryazan_1,5')
-print(cities)
 
-del cities[2] # удалит 'Ryazan_1,5'
-print(cities)
+cars = ['lada', 'bmw', 'vw', 'kia', 'audi', 'fiat']
+german_cars = ['bmw', 'vw', 'audi']
 
-cities.remove('Ryazan_2') # удалит 'Ryazan_2'
-print(cities)
+if 'lada' in cars:
+    print("Yes, Lada is in the list")
+else:
+    print("No, Lada is not")
 
-cities.sort()
-name_of_list.sort(reverse=True)
 
-print(cities)
-print(name_of_list)
-
-#=============================== Part 2 ====================================
-
-cars = ['lada', 'VW', 'bmv', 'mersedes', 'kia', 'skoda']
+print("================= List + condition ===============")
 for car in cars:
-    print(car.upper())
-
-
-my_number_list = list(range(0, 10))
-for num in my_number_list:
-    num = num * 2
-    print(num)
-
-
-cars = ['lada', 'VW', 'bmv', 'mersedes', 'kia', 'skoda']
-
-german_cars = cars[1:4]
-print("German cars: " + str(german_cars))
-
-three_cars = cars[:3]
-print("First 3 cars: " + str(three_cars))
-
-some_cars = cars[2:]
-print("Some cars: " + str(some_cars))
-
-copy_of_list = cars[:]
-print(copy_of_list)
+    if (car in german_cars):
+        print(car + ' is German car')
+    else:
+        print(car + ' is not German')
