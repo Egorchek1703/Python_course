@@ -1,41 +1,48 @@
-# If, elif, else
+# Dictionaries
 
-print(1 + 0 == 1) # true
-print( type(1) == type('1') ) # false
+city_for_game = {
+    'loc_x': 80,
+    'loc_y': 120,
+    'population': 12457,
+    'name': 'Pythongrad',
+    'eco_danger_lvl': 1,
+    'is_a_capital': True,
+    'health': 100,
+}
 
-answer = input("41 + 1 = ")
-if answer == str(42):
-    print("You are right!")
-elif answer == str(24):
-    print("Almost")
-else:
-    print("You are wrong, try again")
-
-
-age = int(input("Введите ваш возраст: "))
-if (age > 0 and age < 18):
-    print("You are a child")
-elif ( (age >= 18 and age < 40) or (age >= 40 and age < 60) ):
-    # Stupid condition to show how works the operator "or"
-    print("You are an adult human")
-elif (age >= 60 and age <= 100):
-    print("You are a old human")
-else:
-    print("You are lying me -_-")
+print( city_for_game['name'].upper() ) # PYTHONGRAD
 
 
-cars = ['lada', 'bmw', 'vw', 'kia', 'audi', 'fiat']
-german_cars = ['bmw', 'vw', 'audi']
+city_for_game['money'] = 120000000
+print(city_for_game['money']) # 120000000
 
-if 'lada' in cars:
-    print("Yes, Lada is in the list")
-else:
-    print("No, Lada is not")
+city_for_game['money'] = 125702000
+print(city_for_game['money']) # 125702000
 
 
-print("================= List + condition ===============")
-for car in cars:
-    if (car in german_cars):
-        print(car + ' is German car')
-    else:
-        print(car + ' is not German')
+if (city_for_game['is_a_capital'] == True):
+    city_for_game['eco_danger_lvl'] += 1
+
+print(city_for_game)
+
+
+print( city_for_game.keys() ) # dict_keys(['loc_x', 'loc_y', 'population', 'name', 'eco_danger_lvl', 'is_a_capital', 'health', 'money'])
+print( city_for_game.values() ) # dict_values([80, 120, 12457, 'Pythongrad', 2, True, 100, 125702000])
+
+# ============== Part 2 ==============
+print("\n============== Part 2 ==============\n")
+
+another_city = city_for_game.copy()
+another_city['money'] = 700000
+
+print(another_city)
+print(city_for_game)
+
+
+city_for_game['livers'] = ['Ivan Ivanov', 'Petr Petrov', 'John Doe']
+city_for_game['location'] = {
+    'x': 80,
+    'y': 120,
+}
+
+print(city_for_game)
