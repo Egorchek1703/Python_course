@@ -1,48 +1,21 @@
-# Dictionaries
+# Input
 
-city_for_game = {
-    'loc_x': 80,
-    'loc_y': 120,
-    'population': 12457,
-    'name': 'Pythongrad',
-    'eco_danger_lvl': 1,
-    'is_a_capital': True,
-    'health': 100,
-}
+name = input("Write your name: ")
+print("Привет " + name + "!")
 
-print( city_for_game['name'].upper() ) # PYTHONGRAD
+a = input("a = ") # введем 4
+b = input("b = ") # введем 2
+print(a + b) # 42
+print( int(a) + int(b) ) # 6
 
 
-city_for_game['money'] = 120000000
-print(city_for_game['money']) # 120000000
+password = ''
+while True:
+    password = input('Password: ')
+    if(password != '123'):
+        print('Password "' + password + '" is not correct')
+    else:
+        print('You are authorized!')
+        break
 
-city_for_game['money'] = 125702000
-print(city_for_game['money']) # 125702000
-
-
-if (city_for_game['is_a_capital'] == True):
-    city_for_game['eco_danger_lvl'] += 1
-
-print(city_for_game)
-
-
-print( city_for_game.keys() ) # dict_keys(['loc_x', 'loc_y', 'population', 'name', 'eco_danger_lvl', 'is_a_capital', 'health', 'money'])
-print( city_for_game.values() ) # dict_values([80, 120, 12457, 'Pythongrad', 2, True, 100, 125702000])
-
-# ============== Part 2 ==============
-print("\n============== Part 2 ==============\n")
-
-another_city = city_for_game.copy()
-another_city['money'] = 700000
-
-print(another_city)
-print(city_for_game)
-
-
-city_for_game['livers'] = ['Ivan Ivanov', 'Petr Petrov', 'John Doe']
-city_for_game['location'] = {
-    'x': 80,
-    'y': 120,
-}
-
-print(city_for_game)
+print('Cycle has been finished')
