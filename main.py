@@ -1,18 +1,22 @@
-# Modules
-import print_DECAB_module as decab
+# Classes
+from hero import *
 
-decab.print_d()
-decab.print_e()
-decab.print_c()
-decab.print_a()
-decab.print_b()
+first_hero = Heroes('Aracul', 1, 'witch', 125)
+first_hero.increase_lvl()
+first_hero.show_hero_desc() 
+"""
+Aracul is a witch and has:
+        level: 1
+        power: 125
+"""
 
-print('===============================')
+first_hero.health = 33      # Менее предпочтительный способ
+first_hero.set_new_health(35)  # Более предпочтительный способ
+print( "New health is " + str(first_hero.health) )
 
-from print_DECAB_module import *
+# ================= Orcs ===================
+first_orc = Orcs("Orgun", 1, "Orc-warrior", 140, 5)
+first_orc.show_hero_desc()
+print( str(first_orc.armor_lvl) )
 
-print_d()
-print_e()
-print_c()
-print_a()
-print_b()
+first_orc.show_hero_desc()
