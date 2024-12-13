@@ -1,22 +1,34 @@
-# Classes
-from hero import *
+# Working with files
 
-first_hero = Heroes('Aracul', 1, 'witch', 125)
-first_hero.increase_lvl()
-first_hero.show_hero_desc() 
-"""
-Aracul is a witch and has:
-        level: 1
-        power: 125
-"""
+users_file = "./users.txt"
+passwords_file = "./passwords.txt"
 
-first_hero.health = 33      # Менее предпочтительный способ
-first_hero.set_new_health(35)  # Более предпочтительный способ
-print( "New health is " + str(first_hero.health) )
+print(users_file, passwords_file)
 
-# ================= Orcs ===================
-first_orc = Orcs("Orgun", 1, "Orc-warrior", 140, 5)
-first_orc.show_hero_desc()
-print( str(first_orc.armor_lvl) )
+users_file_obj = open(users_file, mode='r', encoding='utf8')
+passwords_file_obj = open(passwords_file, mode='r', encoding='utf8')
 
-first_orc.show_hero_desc()
+print(users_file_obj.read())
+print(passwords_file_obj.read())
+
+users_file_obj.seek(0)
+passwords_file_obj.seek(0)
+
+for line in users_file_obj:
+    print("Hello " + line.strip() + "!")
+
+
+found_passwords = "./found_passwords.txt"
+found_passwords_file_obj = open(found_passwords, mode='a', encoding='utf8')
+
+substr_to_search = '_'
+found_passwords_file_obj.write("\nFound passwords with: \"" + substr_to_search + "\"\n\n")
+
+for num, line in enumerate(passwords_file_obj, 1):
+    if "_" in line:
+        print("Line " + str(num) + ": " + line)
+        found_passwords_file_obj.write(line)
+
+users_file_obj.close()
+passwords_file_obj.close()
+found_passwords_file_obj.close()
