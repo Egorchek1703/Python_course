@@ -1,34 +1,29 @@
-# Working with files
+# Catching of errors
 
-users_file = "./users.txt"
-passwords_file = "./passwords.txt"
+file_for_error_path = "./unknown_file.txt"
+"""
+try:
+    print("Inside TRY")
+    file_for_error_obj = open(file=file_for_error_path, mode='r', encoding='utf8')
+except Exception:
+    print("Inside EXCEPT")
+    print("!!! ERROR WAS FOUND !!!")
+else:
+    print("Inside ELSE")
+    print(file_for_error_obj.read())
+finally:
+    print("Inside FINALLY")
+"""
 
-print(users_file, passwords_file)
+import sys
+file_path = "./unknown_file.txt"
 
-users_file_obj = open(users_file, mode='r', encoding='utf8')
-passwords_file_obj = open(passwords_file, mode='r', encoding='utf8')
-
-print(users_file_obj.read())
-print(passwords_file_obj.read())
-
-users_file_obj.seek(0)
-passwords_file_obj.seek(0)
-
-for line in users_file_obj:
-    print("Hello " + line.strip() + "!")
-
-
-found_passwords = "./found_passwords.txt"
-found_passwords_file_obj = open(found_passwords, mode='a', encoding='utf8')
-
-substr_to_search = '_'
-found_passwords_file_obj.write("\nFound passwords with: \"" + substr_to_search + "\"\n\n")
-
-for num, line in enumerate(passwords_file_obj, 1):
-    if "_" in line:
-        print("Line " + str(num) + ": " + line)
-        found_passwords_file_obj.write(line)
-
-users_file_obj.close()
-passwords_file_obj.close()
-found_passwords_file_obj.close()
+while True:
+    try:
+        file_obj = open(file_path, mode='r', encoding='utf8')
+    except:
+        print(sys.exc_info()[1])
+        file_path = input("Enter correct file path: ")
+    else:
+        print(file_obj.read())
+        sys.exit()
